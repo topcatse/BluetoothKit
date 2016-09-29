@@ -51,11 +51,11 @@ internal extension AvailabilityViewController where Self: UIViewController {
 
     // MARK: BKAvailabilityObserver
 
-    internal func availabilityObserver(availabilityObservable: BKAvailabilityObservable, availabilityDidChange availability: BKAvailability) {
+    internal func availabilityObserver(_ availabilityObservable: BKAvailabilityObservable, availabilityDidChange availability: BKAvailability) {
         availabilityView.availabilityObserver(availabilityObservable, availabilityDidChange: availability)
     }
 
-    internal func availabilityObserver(availabilityObservable: BKAvailabilityObservable, unavailabilityCauseDidChange unavailabilityCause: BKUnavailabilityCause) {
+    internal func availabilityObserver(_ availabilityObservable: BKAvailabilityObservable, unavailabilityCauseDidChange unavailabilityCause: BKUnavailabilityCause) {
         availabilityView.availabilityObserver(availabilityObservable, unavailabilityCauseDidChange: unavailabilityCause)
     }
 }
