@@ -5,12 +5,14 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "EF50CF03AA1E23E524F182DF992B5CD2E0F67319" : 0,
+    "C3D8ED1CB28D809ADCE2C0DE74935E8A502ACD53" : 9223372036854775807,
     "3AF18F9C6F5D633BAA0B3F935459E0C777C82047" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E4650D93-BD55-45B2-9D6B-30B69C3F651C",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "EF50CF03AA1E23E524F182DF992B5CD2E0F67319" : "BluetoothKit\/",
-    "3AF18F9C6F5D633BAA0B3F935459E0C777C82047" : "SnapKit\/"
+    "C3D8ED1CB28D809ADCE2C0DE74935E8A502ACD53" : "BluetoothKit\/Example\/Vendor\/CryptoSwift\/",
+    "3AF18F9C6F5D633BAA0B3F935459E0C777C82047" : "BluetoothKit\/Example\/Vendor\/SnapKit\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "BKExample",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -20,6 +22,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rasmusth\/SnapKit.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3AF18F9C6F5D633BAA0B3F935459E0C777C82047"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/krzyzanowskim\/CryptoSwift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C3D8ED1CB28D809ADCE2C0DE74935E8A502ACD53"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rasmusth\/BluetoothKit.git",
