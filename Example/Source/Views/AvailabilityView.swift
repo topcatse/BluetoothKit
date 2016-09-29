@@ -57,7 +57,7 @@ internal class AvailabilityView: UIView, BKAvailabilityObserver {
     // MARK: Functions
 
     fileprivate func applyConstraints() {
-        borderView.snp_makeConstraints { make in
+        borderView.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(self)
             make.height.equalTo(borderHeight)
         }

@@ -77,7 +77,7 @@ internal class CentralViewController: UIViewController, UITableViewDataSource, U
 
     fileprivate func applyConstraints() {
         discoveriesTableView.snp_makeConstraints { make in
-            make.top.equalTo(discoveriesTableView.snp_bottom)
+            make.top.equalTo(topLayoutGuide.snp.bottom)
             make.leading.trailing.equalTo(view)
             make.bottom.equalTo(availabilityView.snp_top)
         }
