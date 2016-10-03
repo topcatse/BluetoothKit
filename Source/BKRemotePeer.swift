@@ -67,7 +67,7 @@ public class BKRemotePeer: Equatable {
             existingData.append(receivedData)
             return
         }
-        data = NSData(data: receivedData) as? NSMutableData
+        data = receivedData // NSData(data: receivedData) as? NSMutableData
     }
 
 }

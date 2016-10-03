@@ -142,11 +142,11 @@ internal class BKConnectionPool: BKCBCentralManagerConnectionDelegate {
         succeedConnectionAttempt(connectionAttemptForPeripheral(peripheral)!)
     }
 
-    internal func centralManager(_ central: CBCentralManager, didFailToConnectPeripheral peripheral: CBPeripheral, error: NSError?) {
+    internal func centralManager(_ central: CBCentralManager, didFailToConnectPeripheral peripheral: CBPeripheral, error: Error?) {
         failConnectionAttempt(connectionAttemptForPeripheral(peripheral)!, error: .internal(underlyingError: error))
     }
 
-    internal func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: NSError?) {
+    internal func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         if let remotePeripheral = connectedRemotePeripherals.filter({ $0.peripheral == peripheral }).last {
             connectedRemotePeripherals.remove(at: connectedRemotePeripherals.index(of: remotePeripheral)!)
             delegate?.connectionPool(self, remotePeripheralDidDisconnect: remotePeripheral)

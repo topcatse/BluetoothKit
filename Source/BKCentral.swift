@@ -222,7 +222,7 @@ public class BKCentral: BKPeer, BKCBCentralManagerStateDelegate, BKConnectionPoo
                 if error == nil {
                     _ = try? self.stateMachine.handleEvent(.setAvailable)
                 } else {
-                    returnError = .internalError(underlyingError: error as! Error?)
+                    returnError = .internalError(underlyingError: error)
                 }
                 completionHandler(remotePeripheral, returnError)
             }

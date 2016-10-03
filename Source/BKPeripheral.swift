@@ -205,11 +205,11 @@ public class BKPeripheral: BKPeer, BKCBPeripheralManagerDelegate, BKAvailability
         }
     }
 
-    internal func peripheralManagerDidStartAdvertising(_ peripheral: CBPeripheralManager, error: NSError?) {
+    internal func peripheralManagerDidStartAdvertising(_ peripheral: CBPeripheralManager, error: Error?) {
 
     }
 
-    internal func peripheralManager(_ peripheral: CBPeripheralManager, didAddService service: CBService, error: NSError?) {
+    internal func peripheralManager(_ peripheral: CBPeripheralManager, didAddService service: CBService, error: Error?) {
         if !peripheralManager.isAdvertising {
             var advertisementData: [String: Any] = [ CBAdvertisementDataServiceUUIDsKey: _configuration.serviceUUIDs ]
             if let localName = _configuration.localName {

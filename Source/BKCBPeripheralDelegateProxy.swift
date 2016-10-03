@@ -27,9 +27,9 @@ import CoreBluetooth
 
 internal protocol BKCBPeripheralDelegate: class {
     func peripheralDidUpdateName(_ peripheral: CBPeripheral)
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: NSError?)
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsForService service: CBService, error: NSError?)
-    func peripheral(_ peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?)
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?)
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsForService service: CBService, error: Error?)
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: Error?)
 }
 
 internal class BKCBPeripheralDelegateProxy: NSObject, CBPeripheralDelegate {
@@ -55,52 +55,52 @@ internal class BKCBPeripheralDelegateProxy: NSObject, CBPeripheralDelegate {
         // print("peripheral: \(peripheral) didModifyServices invalidatedServices: \(invalidatedServices)")
     }
 
-    internal func peripheralDidUpdateRSSI(_ peripheral: CBPeripheral, error: NSError?) {
+    internal func peripheralDidUpdateRSSI(_ peripheral: CBPeripheral, error: Error?) {
         // print("peripheralDidUpdateRSSI: \(peripheral), error: \(error)")
     }
 
-    internal func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: NSError?) {
+    internal func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?) {
         // print("peripheral: \(peripheral) didReadRSSI: \(RSSI), error: \(error)")
     }
 
-    internal func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
+    internal func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         // print("peripheral: \(peripheral) didDiscoverServices error: \(error)")
         delegate?.peripheral(peripheral, didDiscoverServices: error)
     }
 
-    internal func peripheral(_ peripheral: CBPeripheral, didDiscoverIncludedServicesFor service: CBService, error: NSError?) {
+    internal func peripheral(_ peripheral: CBPeripheral, didDiscoverIncludedServicesFor service: CBService, error: Error?) {
         // print("peripheral: \(peripheral) didDiscoverIncludedServicesForService: \(service), error: \(error)")
     }
 
-    internal func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: NSError?) {
+    internal func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         // print("peripheral: \(peripheral) didDiscoverCharacteristicsForService: \(service), error: \(error)")
         delegate?.peripheral(peripheral, didDiscoverCharacteristicsForService: service, error: error)
     }
 
-    internal func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: NSError?) {
+    internal func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         // print("peripheral: \(peripheral) didUpdateValueForCharacteristic: \(characteristic), error: \(error)")
         delegate?.peripheral(peripheral, didUpdateValueForCharacteristic: characteristic, error: error)
     }
 
-    internal func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: NSError?) {
+    internal func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
         // print("peripheral: \(peripheral), didWriteValueForCharacteristic: \(characteristic), error: \(error)")
     }
 
-    internal func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: NSError?) {
+    internal func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
         // print("peripheral: \(peripheral) didUpdateNotificationStateForCharacteristic: \(characteristic), error: \(error)")
     }
 
-    internal func peripheral(_ peripheral: CBPeripheral, didDiscoverDescriptorsFor characteristic: CBCharacteristic, error: NSError?) {
+    internal func peripheral(_ peripheral: CBPeripheral, didDiscoverDescriptorsFor characteristic: CBCharacteristic, error: Error?) {
         // print("peripheral: \(peripheral) didDiscoverDescriptorsForCharacteristic: \(characteristic), error: \(error)")
     }
 
     @nonobjc
-    internal func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor descriptor: CBDescriptor, error: NSError?) {
+    internal func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor descriptor: CBDescriptor, error: Error?) {
         // print("peripheral: \(peripheral) didUpdateValueForDescriptor: \(descriptor), error: \(error)")
     }
 
     @nonobjc
-    internal func peripheral(_ peripheral: CBPeripheral, didWriteValueFor descriptor: CBDescriptor, error: NSError?) {
+    internal func peripheral(_ peripheral: CBPeripheral, didWriteValueFor descriptor: CBDescriptor, error: Error?) {
         // print("peripheral: \(peripheral) didWriteValueForDescriptor: \(descriptor), error: \(error)")
     }
 

@@ -27,8 +27,8 @@ import CoreBluetooth
 
 internal protocol BKCBPeripheralManagerDelegate: class {
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager)
-    func peripheralManagerDidStartAdvertising(_ peripheral: CBPeripheralManager, error: NSError?)
-    func peripheralManager(_ peripheral: CBPeripheralManager, didAddService service: CBService, error: NSError?)
+    func peripheralManagerDidStartAdvertising(_ peripheral: CBPeripheralManager, error: Error?)
+    func peripheralManager(_ peripheral: CBPeripheralManager, didAddService service: CBService, error: Error?)
     func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didSubscribeToCharacteristic characteristic: CBCharacteristic)
     func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didUnsubscribeFromCharacteristic characteristic: CBCharacteristic)
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveWriteRequests requests: [CBATTRequest])
@@ -54,16 +54,16 @@ internal class BKCBPeripheralManagerDelegateProxy: NSObject, CBPeripheralManager
         delegate?.peripheralManagerDidUpdateState(peripheral)
     }
 
-    internal func peripheralManager(_ peripheral: CBPeripheralManager, willRestoreState dict: [String : AnyObject]) {
+    internal func peripheralManager(_ peripheral: CBPeripheralManager, willRestoreState dict: [String : Any]) {
         // print("peripheralManager: \(peripheral) willRestoreState: \(dict)")
     }
 
-    internal func peripheralManagerDidStartAdvertising(_ peripheral: CBPeripheralManager, error: NSError?) {
+    internal func peripheralManagerDidStartAdvertising(_ peripheral: CBPeripheralManager, error: Error?) {
         // print("peripheralManagerDidStartAdvertising: \(peripheral) error: \(error)")
         delegate?.peripheralManagerDidStartAdvertising(peripheral, error: error)
     }
 
-    internal func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: NSError?) {
+    internal func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: Error?) {
         // print("peripheralManager: \(peripheral) didAddService: \(service) error: \(error)")
         delegate?.peripheralManager(peripheral, didAddService: service, error: error)
     }
