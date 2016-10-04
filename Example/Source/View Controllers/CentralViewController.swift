@@ -76,10 +76,10 @@ internal class CentralViewController: UIViewController, UITableViewDataSource, U
     // MARK: Functions
 
     fileprivate func applyConstraints() {
-        discoveriesTableView.snp_makeConstraints { make in
+        discoveriesTableView.snp.makeConstraints { make in
             make.top.equalTo(topLayoutGuide.snp.bottom)
             make.leading.trailing.equalTo(view)
-            make.bottom.equalTo(availabilityView.snp_top)
+            make.bottom.equalTo(availabilityView.snp.top)
         }
     }
 
@@ -169,7 +169,7 @@ internal class CentralViewController: UIViewController, UITableViewDataSource, U
 
     internal func central(_ central: BKCentral, remotePeripheralDidDisconnect remotePeripheral: BKRemotePeripheral) {
         Logger.log("Remote peripheral did disconnect: \(remotePeripheral)")
-        self.navigationController?.popToViewController(self, animated: true)
+        _ = self.navigationController?.popToViewController(self, animated: true)
     }
 
     // MARK: RemotePeripheralViewControllerDelegate

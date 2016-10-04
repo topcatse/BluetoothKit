@@ -60,10 +60,10 @@ internal class PeripheralViewController: UIViewController, AvailabilityViewContr
     // MARK: Functions
 
     fileprivate func applyConstraints() {
-        logTextView.snp_makeConstraints { make in
-            make.top.equalTo(logTextView.snp_bottom)
+        logTextView.snp.makeConstraints { make in
+            make.top.equalTo(logTextView.snp.bottom)
             make.leading.trailing.equalTo(view)
-            make.bottom.equalTo(availabilityView.snp_top)
+            make.bottom.equalTo(availabilityView.snp.top)
         }
     }
 

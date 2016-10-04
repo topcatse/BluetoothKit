@@ -73,7 +73,7 @@ public enum BKAvailability: Equatable {
     - Unauthorized: The app isn't allowed to use Bluetooth.
     - PoweredOff: Bluetooth is turned off.
 */
-public enum BKUnavailabilityCause: NilLiteralConvertible {
+public enum BKUnavailabilityCause: ExpressibleByNilLiteral {
 
     case any
     case resetting

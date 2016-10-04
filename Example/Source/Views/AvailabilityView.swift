@@ -61,11 +61,11 @@ internal class AvailabilityView: UIView, BKAvailabilityObserver {
             make.top.leading.trailing.equalTo(self)
             make.height.equalTo(borderHeight)
         }
-        contentView.snp_makeConstraints { make in
-            make.top.equalTo(borderView.snp_bottom)
+        contentView.snp.makeConstraints { make in
+            make.top.equalTo(borderView.snp.bottom)
             make.leading.trailing.bottom.equalTo(self)
         }
-        statusLabel.snp_makeConstraints { make in
+        statusLabel.snp.makeConstraints { make in
             make.top.leading.equalTo(contentView).offset(offset)
             make.bottom.trailing.equalTo(contentView).offset(-offset)
         }

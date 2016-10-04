@@ -78,7 +78,7 @@ internal class RemotePeripheralViewController: UIViewController, BKRemotePeriphe
     // MARK: Functions
 
     internal func applyConstraints() {
-        logTextView.snp_makeConstraints { make in
+        logTextView.snp.makeConstraints { make in
             make.top.leading.trailing.bottom.equalTo(view)
         }
     }
